@@ -1,0 +1,506 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #0b0e11;
+    color: white;
+}
+
+.wallet-container {
+    max-width: 1500px;
+    margin: auto;
+    padding: 25px;
+}
+
+.stats-grid1 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-bottom: 30px;
+}
+
+.card {
+    background: #161a1e;
+    padding: 18px;
+    border-radius: 12px;
+    transition: .3s;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+}
+
+.card span {
+    font-size: 12px;
+    color: #888;
+}
+
+.card h2 {
+    margin-top: 8px;
+    font-size: 24px;
+}
+
+.wallet-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 25px;
+    margin-bottom: 25px;
+}
+
+.section {
+    background: #161a1e;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.section h2 {
+    margin-bottom: 15px;
+}
+
+.trade-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.trade-card {
+    background: #0b0e11;
+    padding: 16px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.trade-left {
+    display: flex;
+    flex-direction: column;
+}
+
+.trade-left .symbol {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.trade-left small {
+    color: #888;
+    margin-top: 4px;
+}
+
+.trade-right {
+    text-align: right;
+}
+
+.trade-profit {
+    font-size: 16px;
+    font-weight: bold;
+    color: #0ecb81;
+}
+
+.chart-circle {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    margin: 15px auto;
+    background: conic-gradient(#f0b90b 0% 60%, #627eea 60% 85%, #14f195 85% 100%);
+}
+
+.wallet-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.wallet-actions button {
+    width: 100%;
+}
+
+.wallet-history {
+    margin-top: 20px;
+}
+
+.green {
+    color: #0ecb81;
+}
+
+.red {
+    color: #f6465d;
+}
+
+.yellow {
+    color: #f0b90b;
+}
+
+@media(max-width:1100px) {
+    .stats-grid1 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .wallet-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(max-width:700px) {
+    .container {
+        padding: 15px;
+    }
+
+    .stats-grid1 {
+        grid-template-columns: 1fr;
+    }
+
+    .trade-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .trade-right {
+        width: 100%;
+        text-align: left;
+    }
+
+    .wallet-actions {
+        grid-template-columns: 1fr;
+    }
+
+    .chart-circle {
+        width: 180px;
+        height: 180px;
+    }
+}
+
+.portfolio-percent {
+    color: #f0b90b;
+    font-size: 13px;
+    margin-top: 4px;
+    display: block;
+}
+
+.best-asset-value {
+    font-size: 14px;
+    color: #f0b90b;
+    margin-left: 6px;
+}
+
+.history-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 20px;
+}
+
+.history-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 22px;
+    background: #0f141a;
+    border: 1px solid #1b222c;
+    border-radius: 14px;
+    transition: .2s;
+}
+
+.history-card:hover {
+    transform: translateY(-3px);
+    border-color: #f0b90b;
+    box-shadow: 0 0 18px rgba(240, 185, 11, 0.12);
+}
+
+.history-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.history-badge {
+    padding: 8px 14px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.history-badge.BUY {
+    background: rgba(0, 255, 128, 0.12);
+    color: #00ff99;
+}
+
+.history-badge.SELL {
+    background: rgba(255, 0, 0, 0.12);
+    color: #ff5c5c;
+}
+
+.history-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.history-symbol {
+    font-size: 17px;
+    font-weight: bold;
+    color: white;
+}
+
+.history-info small {
+    color: #8b98a5;
+}
+
+.history-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+}
+
+.history-amount {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+
+.history-right small {
+    color: #8b98a5;
+}
+
+@media(max-width:700px) {
+    .history-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .history-right {
+        align-items: flex-start;
+    }
+}
+
+.profit-green {
+    color: #00c853;
+    font-weight: 600;
+}
+
+.profit-red {
+    color: #ff5252;
+    font-weight: 600;
+}
+
+.show-more-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.show-more-btn {
+    background: #1e293b;
+    border: none;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.show-more-btn:hover {
+    background: #334155;
+    transform: translateY(-2px);
+}
+
+.wallet-flex {
+    display: grid;
+    grid-template-columns: 420px 1fr;
+    gap: 24px;
+    margin-top: 30px;
+    align-items: start;
+}
+
+.chart-section {
+    background: linear-gradient(145deg, #111827, #1f2937);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 24px;
+    padding: 25px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+    height: fit-content;
+}
+
+.chart-section h2 {
+    margin-bottom: 10px;
+}
+
+.chart-total {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 38px;
+    font-weight: 700;
+    background: linear-gradient(90deg, #00ff99, #00c2ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.holdings-section {
+    background: linear-gradient(145deg, #111827, #1f2937);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 24px;
+    padding: 25px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+}
+
+.trade-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.trade-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 18px;
+    padding: 18px;
+    transition: 0.25s;
+}
+
+.trade-card:hover {
+    transform: translateY(-3px);
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.trade-left {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.trade-right {
+    text-align: right;
+}
+
+.symbol {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.portfolio-percent {
+    opacity: 0.7;
+}
+
+@media (max-width: 1000px) {
+    .wallet-flex {
+        grid-template-columns: 1fr;
+    }
+}
+
+.wallet-grid {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 20px;
+    align-items: stretch;
+}
+
+.holdings-section,
+.allocation-section {
+    height: 100%;
+}
+
+.allocation-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.allocation-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.allocation-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.allocation-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.allocation-symbol {
+    font-size: 17px;
+    font-weight: 700;
+    color: white;
+}
+
+.allocation-percent {
+    color: #00ff99;
+    font-weight: 700;
+}
+
+.allocation-bar-bg {
+    width: 100%;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.allocation-bar-fill {
+    height: 100%;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #00ff99, #00c2ff);
+}
+
+.allocation-value {
+    color: #999;
+}
+
+@media(max-width: 1000px) {
+    .wallet-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.no-holdings {
+    width: 100%;
+    min-height: 170px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #9aa4af;
+    font-size: 16px;
+    background: #0f141a;
+    border-radius: 12px;
+    border: 1px solid #1b222b;
+}
+
+.no-history {
+    width: 100%;
+    min-height: 170px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #9aa4af;
+    font-size: 16px;
+    background: #0f141a;
+    border-radius: 12px;
+    border: 1px solid #1b222b;
+}
+
+.no-history small {
+    margin-top: 8px;
+    font-size: 14px;
+    color: #6f7b87;
+}

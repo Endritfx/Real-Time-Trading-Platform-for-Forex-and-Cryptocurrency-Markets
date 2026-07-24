@@ -1,0 +1,460 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #060a12;
+    font-family: "Inter", Arial, sans-serif;
+    color: white;
+}
+
+.market-page {
+    min-height: 100vh;
+    padding: 70px 30px;
+    position: relative;
+    overflow: hidden;
+    background: radial-gradient(circle at top left, rgba(240, 185, 11, .12), transparent 35%), radial-gradient(circle at bottom right, rgba(0, 153, 255, .12), transparent 35%), #060a12;
+}
+
+.bg-glow {
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+    filter: blur(140px);
+    opacity: .5;
+}
+
+.glow1 {
+    background: #f0b90b;
+    top: -200px;
+    left: -200px;
+}
+
+.glow2 {
+    background: #0099ff;
+    right: -200px;
+    bottom: -200px;
+}
+
+.market-hero {
+    max-width: 1100px;
+    margin: auto;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.market-badge {
+    display: inline-flex;
+    padding: 12px 25px;
+    border-radius: 40px;
+    background: rgba(255, 255, 255, .06);
+    border: 1px solid rgba(255, 255, 255, .12);
+    color: #f0b90b;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 35px;
+    backdrop-filter: blur(10px);
+}
+
+.market-hero h1 {
+    font-size: 76px;
+    line-height: 1.1;
+    letter-spacing: -2px;
+    font-weight: 800;
+    margin-bottom: 30px;
+}
+
+.market-hero h1 span {
+    background: linear-gradient(90deg, #f0b90b, #ffe27a);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.market-hero p {
+    max-width: 850px;
+    margin: auto;
+    color: #aab4c3;
+    font-size: 20px;
+    line-height: 1.8;
+}
+
+.hero-stats {
+    margin-top: 55px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.hero-stats div {
+    padding: 20px;
+    background: rgba(255, 255, 255, .05);
+    border: 1px solid rgba(255, 255, 255, .08);
+    border-radius: 22px;
+    transition: .3s;
+    backdrop-filter: blur(15px);
+}
+
+.hero-stats div:hover {
+    transform: translateY(-8px);
+    border-color: #f0b90b;
+}
+
+.hero-stats span {
+    font-size: 32px;
+}
+
+.hero-stats h3 {
+    margin: 15px 0 8px;
+}
+
+.hero-stats p {
+    color: #9aa4af;
+    font-size: 13px;
+}
+
+.live-market {
+    max-width: 1100px;
+    margin: 55px auto;
+    padding: 25px;
+    background: #ffffff08;
+    border: 1px solid #ffffff15;
+    border-radius: 25px;
+    position: relative;
+    z-index: 2;
+}
+
+.live-title {
+    color: #f0b90b;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.market-ticker {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.market-ticker div {
+    background: #111820;
+    padding: 20px;
+    border-radius: 18px;
+    display: flex;
+    flex-direction: column;
+}
+
+.market-ticker strong {
+    font-size: 25px;
+    margin: 10px 0;
+}
+
+.market-ticker span {
+    color: #00d084;
+}
+
+.intro {
+    max-width: 900px;
+    margin: 100px auto 70px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.intro h2 {
+    font-size: 42px;
+    margin-bottom: 25px;
+}
+
+.intro p {
+    color: #aab4c3;
+    font-size: 18px;
+    line-height: 1.9;
+}
+
+.steps {
+    max-width: 1000px;
+    margin: 80px auto;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.steps h2 {
+    font-size: 40px;
+    margin-bottom: 35px;
+}
+
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.steps-grid div {
+    padding: 30px;
+    background: #111820;
+    border-radius: 22px;
+    border: 1px solid #ffffff10;
+    transition: .3s;
+}
+
+.steps-grid div:hover {
+    transform: translateY(-8px);
+}
+
+.steps-grid h3 {
+    font-size: 38px;
+    color: #f0b90b;
+}
+
+.steps-grid h4 {
+    font-size: 22px;
+    margin: 15px 0;
+}
+
+.steps-grid p {
+    color: #9aa4af;
+    line-height: 1.6;
+}
+
+.market-grid {
+    max-width: 1400px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 35px;
+    position: relative;
+    z-index: 2;
+}
+
+.market-card {
+    padding: 40px;
+    border-radius: 32px;
+    background: linear-gradient(180deg, rgba(20, 25, 35, .95), rgba(8, 12, 18, .98));
+    border: 1px solid rgba(255, 255, 255, .08);
+    position: relative;
+    overflow: hidden;
+    transition: .35s;
+}
+
+.market-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, transparent, rgba(255, 255, 255, .08), transparent);
+    transform: translateX(-100%);
+    transition: .7s;
+}
+
+.market-card:hover::before {
+    transform: translateX(100%);
+}
+
+.market-card:hover {
+    transform: translateY(-12px);
+}
+
+.card-badge {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    padding: 8px 15px;
+    border-radius: 20px;
+    background: #ffffff10;
+    border: 1px solid #ffffff15;
+    color: #f0b90b;
+    font-size: 12px;
+}
+
+.market-icon {
+    width: 85px;
+    height: 85px;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 45px;
+    margin-bottom: 25px;
+}
+
+.crypto-card .market-icon {
+    background: #f0b90b20;
+    color: #f0b90b;
+}
+
+.forex-card .market-icon {
+    background: #0099ff20;
+    color: #0099ff;
+}
+
+.market-card h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.market-card h3 {
+    color: #9aa4af;
+    font-size: 17px;
+    margin-bottom: 25px;
+}
+
+.market-card p {
+    color: #c0c8d2;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    margin-bottom: 35px;
+}
+
+.features div {
+    background: #ffffff05;
+    padding: 14px;
+    border-radius: 14px;
+    border: 1px solid #ffffff08;
+    color: #dce3eb;
+    font-size: 14px;
+}
+
+.market-card button {
+    width: 100%;
+    padding: 18px;
+    border: none;
+    border-radius: 16px;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.crypto-card button {
+    background: #f0b90b;
+    color: black;
+}
+
+.crypto-card button:hover {
+    background: #ffd84d;
+    transform: translateY(-3px);
+}
+
+.forex-btn {
+    background: #0099ff;
+    color: white;
+}
+
+.forex-btn:hover {
+    background: #37b0ff;
+    transform: translateY(-3px);
+}
+
+.journey {
+    max-width: 900px;
+    margin: 100px auto 0;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.journey h2 {
+    font-size: 42px;
+    margin-bottom: 25px;
+}
+
+.journey p {
+    color: #aab4c3;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.market-hero,
+.hero-stats div,
+.market-card,
+.live-market,
+.steps {
+    animation: fadeUp .8s ease;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media(max-width:1100px) {
+    .market-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .steps-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .market-hero h1 {
+        font-size: 55px;
+    }
+}
+
+@media(max-width:800px) {
+    .hero-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .market-ticker {
+        grid-template-columns: 1fr;
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+    }
+
+    .market-page {
+        padding: 40px 18px;
+    }
+}
+
+@media(max-width:600px) {
+    .market-hero h1 {
+        font-size: 42px;
+    }
+
+    .market-card {
+        padding: 25px;
+    }
+
+    .market-card h2 {
+        font-size: 28px;
+    }
+}
+
+.choose-title {
+    text-align: center;
+    font-size: 42px;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 2;
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}

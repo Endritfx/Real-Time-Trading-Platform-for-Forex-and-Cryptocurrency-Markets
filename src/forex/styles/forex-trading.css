@@ -1,0 +1,858 @@
+body {
+    overflow-y: auto;
+    background: #0b0e11;
+}
+
+.forex-trading-page1 {
+    padding: 20px;
+    background: #0b0e11;
+    min-height: 100vh;
+}
+
+.account-overview {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.account-card {
+    background: #11161c;
+    border: 1px solid #1f2933;
+    border-radius: 12px;
+    padding: 15px;
+    color: white;
+}
+
+.account-card span {
+    display: block;
+    color: #7b8794;
+    margin-bottom: 8px;
+}
+
+.account-card strong {
+    font-size: 22px;
+}
+
+.trading-main-layout1 {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+}
+
+.chart-section1,
+.trade-panel1,
+.risk-calculator1,
+.positions-section1 {
+    background: #11161c;
+    border: 1px solid #1f2933;
+    border-radius: 16px;
+}
+
+.chart-section1 {
+    padding: 20px;
+}
+
+.chart-placeholder1 {
+    height: 700px;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.right-panel1 {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 100%;
+}
+
+.trade-panel1,
+.risk-calculator1 {
+    padding: 20px;
+}
+
+.risk-calculator1 {
+    flex: 1;
+}
+
+.trade-panel1 input,
+.trade-panel1 select,
+.risk-calculator1 input {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    border-radius: 10px;
+    border: 1px solid #1f2933;
+    background: #0f141a;
+    color: white;
+}
+
+.trade-buttons1 {
+    display: flex;
+    gap: 10px;
+    align-items: stretch;
+    margin-top: 10px;
+}
+
+.buy-btn1,
+.sell-btn1 {
+    flex: 1;
+    border: none;
+    border-radius: 10px;
+    padding: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.buy-btn1 {
+    background: #0ecb81;
+}
+
+.sell-btn1 {
+    background: #f6465d;
+}
+
+.calculator-result1 {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.positions-section1 {
+    margin: 20px auto;
+    padding: 15px;
+    width: 100%;
+    max-width: 1480px;
+    box-sizing: border-box;
+}
+
+.positions-section1 th,
+.positions-section1 td {
+    padding: 12px;
+    border-bottom: 1px solid #1f2933;
+    text-align: center;
+}
+
+@media(max-width:1200px) {
+    .trading-main-layout1 {
+        grid-template-columns: 1fr;
+    }
+}
+
+.pair-search-box {
+    position: relative;
+    width: 280px;
+}
+
+.pair-search-box input {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1px solid #2a2f3a;
+    background: #151922;
+    color: white;
+    outline: none;
+}
+
+.pair-search-box input:focus {
+    border-color: #3b82f6;
+}
+
+.pair-results {
+    position: absolute;
+    top: 52px;
+    left: 0;
+    width: 100%;
+    background: #151922;
+    border: 1px solid #2a2f3a;
+    border-radius: 10px;
+    overflow: hidden;
+    z-index: 999;
+}
+
+.pair-item {
+    padding: 12px 14px;
+    cursor: pointer;
+    color: white;
+    transition: 0.2s;
+}
+
+.pair-item:hover {
+    background: #1f2937;
+}
+
+.section-header1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 15px;
+}
+
+.live-price-panel {
+    background: #11161c;
+    border: 1px solid #1f2933;
+    border-radius: 12px;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+    min-width: 320px;
+    margin: 0;
+}
+
+.pair-name {
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.current-price {
+    color: white;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.price-up {
+    color: #16c784;
+    font-weight: 600;
+}
+
+.price-down {
+    color: #ea3943;
+    font-weight: 600;
+}
+
+.live-price-panel h3 {
+    color: white;
+    margin: 0;
+}
+
+.live-price-panel div:last-child {
+    color: #16c784;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.calculator-pair {
+    margin-bottom: 15px;
+    padding: 12px;
+    background: #0f141a;
+    border-radius: 10px;
+    color: white;
+}
+
+.calculator-pair strong {
+    color: #16c784;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 12px;
+}
+
+.input-group label {
+    color: #cbd5e1;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 6px;
+}
+
+.account-overview1 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.account-card1 {
+    background: #11161c;
+    border: 1px solid #1f2933;
+    border-radius: 16px;
+    padding: 20px;
+}
+
+.account-card1 span {
+    color: #8b949e;
+    font-size: 14px;
+}
+
+.account-card1 h3 {
+    color: white;
+    margin-top: 10px;
+    font-size: 28px;
+}
+
+@media(max-width:1200px) {
+    .account-overview1 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.modify-btn,
+.cancel-btn {
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.modify-btn {
+    background: #3b82f6;
+    color: white;
+}
+
+.cancel-btn {
+    background: #ef4444;
+    color: white;
+}
+
+.save-btn {
+    background: #16c784;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.pair-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.stat-card {
+    background: #0f141a;
+    border: 1px solid #1f2933;
+    border-radius: 12px;
+    padding: 15px;
+    text-align: center;
+}
+
+.stat-card span {
+    display: block;
+    color: #8b949e;
+    margin-bottom: 8px;
+}
+
+.stat-card strong {
+    color: white;
+    font-size: 18px;
+}
+
+.analysis-loading {
+    color: #f5c542;
+    font-weight: 500;
+}
+
+.analysis-empty {
+    opacity: 0.6;
+    font-size: 14px;
+}
+
+.analysis-result {
+    background: #0f172a;
+    padding: 12px;
+    border-radius: 8px;
+    border-left: 3px solid #22c55e;
+    white-space: pre-line;
+}
+
+.ai-btn {
+    flex: 1;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #1f2937;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.ai-btn:hover {
+    background: #111827;
+    border-color: #4b5563;
+}
+
+.buy-btn1,
+.sell-btn1,
+.ai-btn {
+    flex: 1;
+    height: 48px;
+    border-radius: 10px;
+}
+
+.drawer-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    display: flex;
+    justify-content: flex-end;
+    z-index: 9999;
+}
+
+.drawer {
+    width: 380px;
+    height: 100vh;
+    background: #0b0f14;
+    color: white;
+    padding: 18px;
+    transform: translateX(100%);
+    animation: slideIn 0.25s ease forwards;
+    display: flex;
+    flex-direction: column;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes slideIn {
+    to {
+        transform: translateX(0);
+    }
+}
+
+.drawer-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.close-btn {
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+    border: none;
+    background: rgba(255, 80, 80, 0.15);
+    color: #ff4d4d;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s;
+}
+
+.close-btn:hover {
+    background: rgba(255, 80, 80, 0.3);
+}
+
+.drawer-content {
+    overflow-y: auto;
+    flex: 1;
+    padding-right: 6px;
+}
+
+.drawer-content::-webkit-scrollbar {
+    width: 6px;
+}
+
+.drawer-content::-webkit-scrollbar-thumb {
+    background: #2b3442;
+    border-radius: 10px;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+.empty-table {
+    text-align: center;
+    padding: 22px 20px !important;
+    color: #6b7280;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.positions-section1 table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.positions-section1 th,
+.positions-section1 td {
+    padding: 14px 10px;
+    text-align: center;
+    vertical-align: middle;
+    border-bottom: 1px solid #1f2933;
+}
+
+.positions-section1 td input {
+    width: 120px;
+    height: 38px;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    border-radius: 8px;
+    border: 1px solid #2b3442;
+    background: #0f141a;
+    color: white;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: nowrap;
+}
+
+.modify-btn,
+.cancel-btn {
+    width: 95px;
+    height: 42px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.modify-btn {
+    background: #3b82f6;
+    color: white;
+}
+
+.cancel-btn {
+    background: #ef4444;
+    color: white;
+}
+
+@media (min-width:1201px) and (max-width:1500px) {
+    .forex-trading-page1 {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    .positions-section1 {
+        width: calc(100% - 20px);
+        margin: 20px auto;
+        padding: 15px;
+        box-sizing: border-box;
+    }
+
+    .positions-section1 table {
+        width: 100%;
+        table-layout: fixed;
+    }
+
+    .positions-section1 th,
+    .positions-section1 td {
+        padding: 10px 6px;
+        font-size: 12px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .positions-section1 td input {
+        width: 80px;
+        height: 34px;
+    }
+
+    .action-buttons {
+        gap: 5px;
+        flex-wrap: wrap;
+    }
+
+    .modify-btn,
+    .cancel-btn,
+    .save-btn {
+        width: 70px;
+        height: 34px;
+        font-size: 11px;
+        padding: 0;
+    }
+}
+
+@media (max-width:1200px) {
+    .forex-trading-page1 {
+        padding: 15px;
+    }
+
+    .trading-main-layout1 {
+        grid-template-columns: 1fr;
+    }
+
+    .chart-placeholder1 {
+        height: 650px;
+    }
+
+    .account-overview,
+    .account-overview1 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .pair-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .right-panel1 {
+        height: auto;
+    }
+
+    .positions-section1 {
+        width: auto;
+        margin: 10px;
+        padding: 15px;
+        border-radius: 16px;
+        overflow: hidden;
+    }
+
+    .positions-section1 table {
+        width: 100%;
+        table-layout: auto;
+        border-collapse: collapse;
+    }
+
+    .positions-section1 th,
+    .positions-section1 td {
+        padding: 10px 8px;
+        font-size: 12px;
+        text-align: center;
+        white-space: normal;
+        vertical-align: middle;
+    }
+
+    .positions-section1.open-table th:nth-child(5),
+    .positions-section1.open-table td:nth-child(5),
+    .positions-section1.open-table th:nth-child(6),
+    .positions-section1.open-table td:nth-child(6) {
+        display: none;
+    }
+
+    .positions-section1.history-table th:nth-child(5),
+    .positions-section1.history-table td:nth-child(5) {
+        display: none;
+    }
+
+    .action-buttons {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+
+    .modify-btn,
+    .cancel-btn {
+        width: 65px;
+        height: 30px;
+        padding: 0 8px;
+        font-size: 11px;
+        white-space: nowrap;
+    }
+}
+
+@media(max-width:768px) {
+    .forex-trading-page1 {
+        padding: 10px;
+        overflow-x: hidden;
+        box-sizing: border-box;
+    }
+
+    .chart-section1 {
+        padding: 10px;
+        width: 100%;
+        overflow: hidden;
+        box-sizing: border-box;
+    }
+
+    .section-header1 {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+
+    .pair-search-box {
+        width: 100%;
+    }
+
+    .live-price-panel {
+        min-width: 0;
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .trade-buttons1 {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .buy-btn1,
+    .sell-btn1,
+    .ai-btn {
+        width: 100% !important;
+        height: 52px !important;
+        font-size: 15px;
+        flex: none;
+    }
+
+    .positions-section1 {
+        width: calc(100% - 20px);
+        margin: 10px;
+        padding: 12px;
+        border-radius: 16px;
+        overflow: hidden;
+        box-sizing: border-box;
+    }
+
+    .positions-section1 table {
+        width: 100%;
+        table-layout: auto;
+        border-collapse: collapse;
+    }
+
+    .positions-section1 th,
+    .positions-section1 td {
+        padding: 6px 3px;
+        font-size: 10px;
+        text-align: center;
+        vertical-align: middle;
+        overflow: hidden;
+    }
+
+    .positions-section1 td input {
+        width: 50px;
+        height: 26px;
+        padding: 2px;
+        font-size: 10px;
+        text-align: center;
+        box-sizing: border-box;
+        display: block;
+        margin: 4px auto;
+    }
+
+    .positions-section1.open-table th:nth-child(5),
+    .positions-section1.open-table td:nth-child(5),
+    .positions-section1.open-table th:nth-child(6),
+    .positions-section1.open-table td:nth-child(6) {
+        width: 65px !important;
+        min-width: 65px;
+        padding: 8px 8px !important;
+    }
+
+    .positions-section1.history-table th:nth-child(4),
+    .positions-section1.history-table td:nth-child(4),
+    .positions-section1.history-table th:nth-child(5),
+    .positions-section1.history-table td:nth-child(5) {
+        display: none;
+    }
+
+    .action-buttons {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        width: 100%;
+    }
+
+    .modify-btn,
+    .cancel-btn,
+    .save-btn {
+        width: 58px;
+        height: 25px;
+        font-size: 9px;
+        padding: 0;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        white-space: nowrap;
+        margin: auto;
+    }
+
+    .positions-section1 th:last-child,
+    .positions-section1 td:last-child {
+        width: 65px;
+        padding: 3px;
+    }
+
+    .positions-section1.open-table td:nth-child(5),
+    .positions-section1.open-table td:nth-child(6) {
+        padding: 8px 6px !important;
+    }
+
+    .positions-section1.open-table td:nth-child(5) input,
+    .positions-section1.open-table td:nth-child(6) input {
+        width: 55px !important;
+        height: 28px;
+        display: block;
+        margin: 5px auto !important;
+    }
+
+    .positions-section1.open-table input {
+        display: block !important;
+    }
+
+    .chart-section1 {
+        width: 100%;
+        height: auto;
+        padding: 10px;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+    .chart-section1 iframe,
+    .chart-section1>div {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .chart-placeholder1 {
+        width: 100% !important;
+        height: 650px !important;
+        overflow: hidden;
+        box-sizing: border-box;
+    }
+
+    .tradingview-widget-container,
+    .tradingview-widget-container__widget {
+        width: 100% !important;
+        height: 100% !important;
+    }
+}
+
+@media(max-width:480px) {
+    .forex-trading-page1 {
+        padding: 8px;
+    }
+
+    .chart-placeholder1 {
+        height: 320px;
+    }
+
+    .account-card1 h3 {
+        font-size: 22px;
+    }
+
+    .live-price-panel div:last-child {
+        font-size: 22px;
+    }
+
+    .trade-panel1 input,
+    .trade-panel1 select,
+    .risk-calculator1 input {
+        padding: 10px;
+    }
+}
