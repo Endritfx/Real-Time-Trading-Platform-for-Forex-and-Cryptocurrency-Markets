@@ -19,7 +19,7 @@ The primary objective of this platform is to provide an educational environment 
 
 ---
 
-# ⭐ Key Features
+#  Key Features
 
 - Real-Time Cryptocurrency Market
 - Real-Time Forex Market
