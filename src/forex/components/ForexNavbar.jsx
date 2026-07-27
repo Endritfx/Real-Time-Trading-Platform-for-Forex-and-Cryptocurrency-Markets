@@ -4,6 +4,7 @@ import { auth } from "../../services/firebase";
 import { useState } from "react";
 import "../styles/forex-navbar.css";
 import Chatbot from "../components/Chatbot";
+import { FiMenu } from "react-icons/fi";
 
 export default function ForexNavbar() {
     const location = useLocation();
@@ -23,7 +24,7 @@ export default function ForexNavbar() {
             </Link>
             {/* MOBILE BTN */}
             <button className="forex-menu-btn" onClick={() => setOpen(!open)}>
-                ☰
+                <FiMenu />
             </button>
             {/* LINKS */}
             <div className={open ? "forex-links show" : "forex-links"}>

@@ -6,6 +6,8 @@ import ForexFinalExam from "../components/ForexFinalExam";
 import ForexCertificate from "../components/ForexCertificate";
 import ForexFooter from "../components/ForexFooter";
 import "../styles/forex-learning.css";
+import { FaCheckCircle } from "react-icons/fa";
+import { IoChevronUp, IoChevronDown } from "react-icons/io5";
 
 export default function ForexLearning() {
 
@@ -76,7 +78,7 @@ export default function ForexLearning() {
 
     const content = {
         basics: {
-            title: "💱 Forex Basics",
+            title: " Forex Basics",
             description:
                 "Learn the fundamentals of the Forex Market.",
             chapters: [
@@ -144,7 +146,7 @@ export default function ForexLearning() {
         },
 
         technical: {
-            title: "📊 Technical Analysis",
+            title: " Technical Analysis",
             description:
                 "Understand charts and market behavior.",
             chapters: [
@@ -212,7 +214,7 @@ export default function ForexLearning() {
         },
 
         strategy: {
-            title: "🔥 Trading Strategies",
+            title: " Trading Strategies",
             description:
                 "Discover practical trading systems.",
             chapters: [
@@ -270,7 +272,7 @@ export default function ForexLearning() {
         },
 
         smc: {
-            title: "🧠 Smart Money Concepts",
+            title: " Smart Money Concepts",
             description:
                 "Learn how institutions move the market.",
             chapters: [
@@ -338,7 +340,7 @@ export default function ForexLearning() {
         },
 
         risk: {
-            title: "🛡️ Risk Management",
+            title: " Risk Management",
             description:
                 "Protect your capital like a professional trader.",
             chapters: [
@@ -437,9 +439,6 @@ export default function ForexLearning() {
                 examMode !== "exam" && (
                     <div className="forex-learning-page">
                         <div className="forex-hero">
-                            <span className="forex-badge">
-                                🎓 Forex Academy
-                            </span>
                             <h1>Learn Forex Trading Step By Step</h1>
                             <p>From Beginner to Advanced Trader.</p>
                             <div className="progress-section">
@@ -497,11 +496,13 @@ export default function ForexLearning() {
                                                 openChapter === `${activeSection}-${index}` ? null : `${activeSection}-${index}`)}>
                                                 <h3>{chapter.title}</h3>
                                                 <span className="chapter-status">
-                                                    {
-                                                        completedLessons.includes(`${activeSection}-${chapter.title}`) ? " Done" : (
-                                                            openChapter === `${activeSection}-${index}` ? "▲" : "▼"
-                                                        )
-                                                    }
+                                                    {completedLessons.includes(`${activeSection}-${chapter.title}`) ? (
+                                                        <FaCheckCircle className="status-done" />
+                                                    ) : openChapter === `${activeSection}-${index}` ? (
+                                                        <IoChevronUp className="status-arrow" />
+                                                    ) : (
+                                                        <IoChevronDown className="status-arrow" />
+                                                    )}
                                                 </span>
                                             </div>
                                             {
@@ -511,7 +512,7 @@ export default function ForexLearning() {
                                                         <p>{chapter.text}</p>
                                                         {
                                                             completedLessons.includes(`${activeSection}-${chapter.title}`) ?
-                                                                <button className="completed-btn5">✅ Completed</button>
+                                                                <button className="completed-btn5"> Completed</button>
                                                                 :
                                                                 <button className="complete-btn5" onClick={() => completeLesson(`${activeSection}-${chapter.title}`)}>
                                                                     Mark as Completed
@@ -547,16 +548,16 @@ export default function ForexLearning() {
                 <div className="quiz-unlock">
                     <h2>Forex Academy Completed</h2>
                     <button className="start-quiz-btn" onClick={() => setExamMode("exam")}>
-                        🚀 Start Final Exam
+                        Start Final Exam
                     </button>
                 </div>
             }
             {
                 examPassed &&
                 <div className="quiz-unlock">
-                    <h2>🏆 Congratulations</h2>
+                    <h2> Congratulations</h2>
                     <button className="start-quiz-btn" onClick={() => setShowCertificate(true)} >
-                        🎓 View Certificate
+                        View Certificate
                     </button>
                 </div>
             }

@@ -106,9 +106,9 @@ export default function CryptoFinalExam({ onBack, exitToLessons }) {
     }
     return (
         <div className="final-exam">
-            <h1>🧪 Crypto Final Exam</h1>
+            <h1> Crypto Final Exam</h1>
             <button className="quiz-back-btn" onClick={onBack}>
-                ← Back
+                Back
             </button>
             {!finished ? (
                 <>
@@ -136,7 +136,7 @@ export default function CryptoFinalExam({ onBack, exitToLessons }) {
                 </>
             ) : (
                 <div className="exam-result">
-                    <h2>{passed ? "🎉 You Passed!" : "❌ You Failed"}</h2>
+                    <h2>{passed ? " You Passed!" : " You Failed"}</h2>
                     <h1>{percent}%</h1>
                     <p style={{ color: "#aaa", marginTop: 10 }}>Score: {score} / {examQuestions.length}</p>
                     {passed ? (
@@ -182,7 +182,7 @@ export default function CryptoFinalExam({ onBack, exitToLessons }) {
                                         </p>
                                     )}
                                     <span>
-                                        {a.isCorrect ? "✅ Correct" : "❌ Wrong"}
+                                        {a.isCorrect ? " Correct" : " Wrong"}
                                     </span>
                                 </div>
                             ))}

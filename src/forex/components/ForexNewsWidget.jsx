@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { auth, db } from "../../services/firebase";
 import { doc, getDoc, updateDoc } from "firebase/firestore";
+import { IoClose } from "react-icons/io5";
+import { RiBookmarkLine, RiBookmarkFill } from "react-icons/ri";
 
 export default function ForexNewsWidget() {
     const [news, setNews] = useState([]);
@@ -30,7 +32,7 @@ export default function ForexNewsWidget() {
                 );
                 setLoading(false);
             }
-            const response = await fetch("http://localhost:5000/api/forex-news");
+            const response = await fetch("https://trading-platform-backend-peyh.onrender.com/api/forex-news");
             const data = await response.json();
             const filteredNews = data.filter(article => {
                 const title = article.headline.toLowerCase();
@@ -204,13 +206,13 @@ export default function ForexNewsWidget() {
     return (
         <div className="forex-news-widget">
             <div className="news-tabs1">
-                <button className={!showSaved ? "active-tab" : ""} onClick={() => setShowSaved(false)}> 📰 All News</button>
-                <button className={showSaved ? "active-tab" : ""} onClick={() => setShowSaved(true)}>🔖 Saved News</button>
+                <button className={!showSaved ? "active-tab" : ""} onClick={() => setShowSaved(false)}>  All News</button>
+                <button className={showSaved ? "active-tab" : ""} onClick={() => setShowSaved(true)}> Saved News</button>
             </div>
             {
                 showSaved && displayedNews.length === 0 && (
                     <div className="empty-saved-news">
-                        <div className="empty-icon">🔖</div>
+                        <div className="empty-icon"></div>
                         <h2>No Saved News Yet</h2>
                         <p>
                             Save interesting Forex news articles
@@ -243,16 +245,18 @@ export default function ForexNewsWidget() {
                                                     <button className="remove-news-btn" onClick={(e) => {
                                                         e.preventDefault();
                                                         removeNews(article.id);
-                                                    }}> ✖
+                                                    }}>  <IoClose />
                                                     </button>
                                                 )
                                                 :
                                                 (
                                                     <button className={`save-news-btn1 ${isSaved(article.id) ? "saved" : ""}`} onClick={(e) => {
                                                         e.preventDefault();
-                                                        console.log("Button clicked");
                                                         saveNews(article);
-                                                    }}>★
+                                                    }}>{isSaved(article.id)
+                                                        ? <RiBookmarkFill />
+                                                        : <RiBookmarkLine />
+                                                        }
                                                     </button>
                                                 )
                                         }

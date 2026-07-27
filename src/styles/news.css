@@ -415,3 +415,34 @@ body {
     display: block !important;
     vertical-align: middle;
 }
+
+.bookmark-btn {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.08);
+    font-size: 18px;
+    transition: all .25s ease;
+}
+
+.bookmark-btn:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.bookmark-btn.saved {
+    color: #ff4d6d;
+}
+
+.bookmark-btn svg {
+    transition: transform .25s ease;
+}
+
+.bookmark-btn:hover svg {
+    transform: scale(1.15);
+}

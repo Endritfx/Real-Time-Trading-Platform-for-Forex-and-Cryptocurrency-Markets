@@ -49,13 +49,13 @@ export default function CryptoCertificate({ onBack }) {
         <div className="certificate-wrapper">
             {onBack && (
                 <button className="certificate-back-btn" onClick={onBack}>
-                    ← Back
+                    Back
                 </button>
             )
             }
             {/* CERTIFICATE */}
             <div id="crypto-certificate" className="certificate">
-                <h1>🎓 CERTIFICATE</h1>
+                <h1> CERTIFICATE</h1>
                 <h2>Crypto Academy</h2>
                 <p>This certifies that</p>
                 <h2 className="certificate-name1">{userName}</h2>
@@ -76,7 +76,7 @@ export default function CryptoCertificate({ onBack }) {
             </div>
             {/* BUTTON */}
             <button className="download-certificate-btn" onClick={downloadCertificate}>
-                📥 Download Certificate
+                Download Certificate
             </button>
         </div >
     );

@@ -9,9 +9,6 @@ export default function ForexNews() {
             <ForexNavbar />
             <div className="forex-news-page">
                 <div className="news-hero1">
-                    <span className="news-badge1">
-                        📰 Market News
-                    </span>
                     <h1>Latest Forex & Financial News</h1>
                     <p>
                         Follow major market headlines,

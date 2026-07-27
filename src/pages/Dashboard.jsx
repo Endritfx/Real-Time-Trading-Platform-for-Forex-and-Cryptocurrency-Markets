@@ -9,6 +9,7 @@ import { buyCrypto, sellCrypto } from "../services/portfolioService";
 import { auth, db } from "../services/firebase";
 import { doc, onSnapshot } from "firebase/firestore";
 import { getMarketStats } from "../services/marketService";
+import { IoClose } from "react-icons/io5";
 
 export default function Dashboard() {
 
@@ -366,7 +367,7 @@ export default function Dashboard() {
     async function analyzeCryptoTrade() {
         try {
             setCryptoLoading(true);
-            const res = await fetch("http://localhost:5000/analyze-trade", {
+            const res = await fetch("https://trading-platform-backend-peyh.onrender.com/analyze-trade", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -393,7 +394,7 @@ export default function Dashboard() {
         if (!marketStats) return;
         setAiLoading(true);
         try {
-            const res = await fetch("http://localhost:5000/ai-market-insight", {
+            const res = await fetch("https://trading-platform-backend-peyh.onrender.com/ai-market-insight", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -553,7 +554,7 @@ export default function Dashboard() {
                             </div>
                         </div>
                         <div className="ai-box">
-                            <h3>🤖 AI Market Insight</h3>
+                            <h3> AI Market Insight</h3>
                             {aiLoading ? (
                                 <p>Analyzing market...</p>
                             ) : (
@@ -597,7 +598,7 @@ export default function Dashboard() {
                         </div>
                         <hr style={{ margin: "20px 0" }} />
                         {/* BUY */}
-                        <h3>💰 Buy Crypto</h3>
+                        <h3> Buy Crypto</h3>
                         <input value={buyAmount} onChange={(e) => setBuyAmount(e.target.value)} placeholder="USD Amount" />
                         <div className="sell-buttons">
                             <button onClick={() => updateBuyPercent(25)}> 25%</button>
@@ -608,7 +609,7 @@ export default function Dashboard() {
                         <div className="slider-value">{buyPercent}% of Balance</div>
                         <button onClick={handleBuy}>Buy</button>
                         {/* SELL */}
-                        <h3 style={{ marginTop: "25px" }}>💸 Sell Crypto</h3>
+                        <h3 style={{ marginTop: "25px" }}> Sell Crypto</h3>
                         <input value={sellAmount} onChange={(e) => setSellAmount(e.target.value)} placeholder="Crypto Amount" />
                         <div className="sell-buttons">
                             <button onClick={() => updateSellPercent(25)}>25%</button>
@@ -622,7 +623,7 @@ export default function Dashboard() {
                 </div>
                 {/* OPEN TRADES */}
                 <div className="section">
-                    <h2>🟢 Open Positions</h2>
+                    <h2> Open Positions</h2>
                     <div className="trade-grid">
                         {
                             openTradesData.length === 0 ? (
@@ -748,7 +749,7 @@ export default function Dashboard() {
                 {/* HISTORY */}
                 <div className="section">
                     <div className="history-header">
-                        <h2>📜 Trade History</h2>
+                        <h2> Trade History</h2>
                         {
                             tradeHistory.length > 2 && (
                                 <select value={historyFilter} onChange={(e) => setHistoryFilter(e.target.value)}>
@@ -824,12 +825,12 @@ export default function Dashboard() {
                                     className="close-btn1"
                                     onClick={() => setIsCryptoDrawerOpen(false)}
                                 >
-                                    X
+                                    <IoClose />
                                 </button>
                             </div>
 
                             <div className="drawer-content1">
-                                {cryptoLoading && (<p>🤖 Analyzing crypto trade...</p>)}
+                                {cryptoLoading && (<p> Analyzing crypto trade...</p>)}
                                 {!cryptoLoading && !cryptoAnalysis && (<p>Click analyze to get AI review.</p>)}
                                 {!cryptoLoading && cryptoAnalysis && (<pre>{cryptoAnalysis}</pre>)}
                             </div>

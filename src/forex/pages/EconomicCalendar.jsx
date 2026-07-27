@@ -11,9 +11,6 @@ export default function EconomicCalendar() {
                 {/* HERO */}
                 <div className="calendar-hero">
                     <div className="hero-overlay"></div>
-                    <span className="calendar-badge">
-                        📅 Economic Calendar
-                    </span>
                     <h1>Stay Ahead Of Market Events</h1>
                     <p>
                         Track important economic releases,

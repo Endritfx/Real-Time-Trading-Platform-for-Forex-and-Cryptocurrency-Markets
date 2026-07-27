@@ -70,7 +70,7 @@ export default function ForexCertificate() {
                 </div>
             </div>
             <button className="download-certificate-btn" onClick={downloadCertificate}>
-                📥 Download Certificate
+                Download Certificate
             </button>
         </div>
     );

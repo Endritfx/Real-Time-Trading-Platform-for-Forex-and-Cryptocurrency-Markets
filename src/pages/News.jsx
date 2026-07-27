@@ -5,6 +5,7 @@ import "../styles/news.css";
 import { doc, getDoc, updateDoc } from "firebase/firestore";
 import { db, auth } from "../services/firebase";
 import { onAuthStateChanged } from "firebase/auth";
+import { FaHeart, FaRegHeart } from "react-icons/fa";
 
 export default function News() {
     const [news, setNews] = useState([]);
@@ -17,7 +18,7 @@ export default function News() {
     useEffect(() => {
         async function fetchNews() {
             try {
-                const res = await fetch("http://localhost:5000/api/news");
+                const res = await fetch("https://trading-platform-backend-peyh.onrender.com/api/news");
                 const data = await res.json();
                 setNews(data.articles || []);
             } catch (err) {
@@ -174,7 +175,7 @@ export default function News() {
 
                 {activeTab === "live" && filteredNews.length > 0 && (
                     <div className="breaking">
-                        🔥 Breaking: {filteredNews[0].title}
+                        Breaking: {filteredNews[0].title}
                     </div>
                 )}
 
@@ -220,7 +221,7 @@ export default function News() {
                                                     className={`bookmark-btn ${isSaved ? "saved" : ""}`}
                                                     onClick={() => toggleSaveNews(item)}
                                                 >
-                                                    {isSaved ? "❤️" : "🤍"}
+                                                    {isSaved ? <FaHeart /> : <FaRegHeart />}
                                                 </button>
                                                 <a
                                                     className="news-link"

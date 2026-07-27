@@ -1,6 +1,9 @@
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import "../styles/market-select.css";
+import { FaBitcoin, FaChartLine, FaGraduationCap, FaRobot, FaCoins } from "react-icons/fa";
+
+import { MdCurrencyExchange } from "react-icons/md";
 
 export default function MarketSelect() {
 
@@ -47,22 +50,30 @@ export default function MarketSelect() {
                 </p>
                 <div className="hero-stats">
                     <div>
-                        <span>📚</span>
+                        <span>
+                            <FaGraduationCap />
+                        </span>
                         <h3> Learning </h3>
                         <p> Courses & market education </p>
                     </div>
                     <div>
-                        <span>📊</span>
+                        <span>
+                            <FaChartLine />
+                        </span>
                         <h3> Live Data </h3>
                         <p> Real-time prices & charts</p>
                     </div>
                     <div>
-                        <span>🤖</span>
+                        <span>
+                            <FaRobot />
+                        </span>
                         <h3> AI Support</h3>
                         <p> Smart trade analysis</p>
                     </div>
                     <div>
-                        <span>🎯</span>
+                        <span>
+                            <FaCoins />
+                        </span>
                         <h3> Practice</h3>
                         <p> Risk-free simulation</p>
                     </div>
@@ -92,7 +103,7 @@ export default function MarketSelect() {
                         POPULAR MARKET
                     </div>
                     <div className="market-icon">
-                        ₿
+                        <FaBitcoin />
                     </div>
                     <h2>
                         Crypto Market
@@ -109,12 +120,12 @@ export default function MarketSelect() {
                         before making real trading decisions.
                     </p>
                     <div className="features">
-                        <div>✔ Live Crypto Prices </div>
-                        <div>✔ Advanced Charts</div>
-                        <div>✔ Portfolio System</div>
-                        <div>✔ Market News</div>
-                        <div>✔ AI Assistant</div>
-                        <div>✔ Learning Modules</div>
+                        <div> Live Crypto Prices </div>
+                        <div> Advanced Charts</div>
+                        <div> Portfolio System</div>
+                        <div> Market News</div>
+                        <div> AI Assistant</div>
+                        <div> Learning Modules</div>
                     </div>
                     <button onClick={() => navigate("/dashboard")}>
                         Explore Crypto Market
@@ -126,7 +137,7 @@ export default function MarketSelect() {
                         PROFESSIONAL MARKET
                     </div>
                     <div className="market-icon">
-                        📈
+                        <MdCurrencyExchange />
                     </div>
                     <h2>
                         Forex Market
@@ -140,12 +151,12 @@ export default function MarketSelect() {
                         conditions using real-time Forex data.
                     </p>
                     <div className="features">
-                        <div>✔ Live Forex Rates</div>
-                        <div>✔ Economic Calendar</div>
-                        <div>✔ Forex Calculator</div>
-                        <div>✔ FX News</div>
-                        <div>✔ AI Trade Review</div>
-                        <div>✔ Risk Management</div>
+                        <div> Live Forex Rates</div>
+                        <div> Economic Calendar</div>
+                        <div> Forex Calculator</div>
+                        <div> FX News</div>
+                        <div> AI Trade Review</div>
+                        <div> Risk Management</div>
                     </div>
                     <button className="forex-btn" onClick={() => navigate("/forex/ForexTrading")}>
                         Explore Forex Market

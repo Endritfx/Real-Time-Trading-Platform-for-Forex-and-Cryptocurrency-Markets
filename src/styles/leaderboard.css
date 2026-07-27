@@ -144,3 +144,35 @@ body {
     background: linear-gradient(90deg, rgba(240, 185, 11, 0.08), rgba(27, 34, 43, 1));
     box-shadow: 0 0 18px rgba(240, 185, 11, 0.15);
 }
+
+.title-icon {
+    margin-right: 10px;
+    color: #f7c948;
+    vertical-align: middle;
+}
+
+.leaderboard-header span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.gold-medal {
+    color: #f7c948;
+    font-size: 24px;
+}
+
+.silver-medal {
+    color: #c0c0c0;
+    font-size: 22px;
+}
+
+.bronze-medal {
+    color: #cd7f32;
+    font-size: 22px;
+}
+
+.rank-number {
+    font-weight: 700;
+    color: #9ca3af;
+}

@@ -262,7 +262,7 @@ export default function Wallet() {
                                         {/* LEFT */}
                                         <div className="history-left">
                                             <div className={`history-badge ${item.type}`}>
-                                                {item.type === "BUY" ? "🟢 BUY" : "🔴 SELL"}
+                                                {item.type === "BUY" ? " BUY" : " SELL"}
                                             </div>
                                             <div className="history-info">
                                                 <div className="history-symbol"> {item.symbol}</div>

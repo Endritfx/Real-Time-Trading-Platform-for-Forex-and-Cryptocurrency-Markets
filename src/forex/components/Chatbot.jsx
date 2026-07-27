@@ -3,6 +3,7 @@ import { MessageCircle, X, Send } from "lucide-react";
 import { doc, getDoc, setDoc } from "firebase/firestore";
 import { auth, db } from "../../services/firebase";
 import "../styles/ChatBot.css";
+import { X as CloseIcon } from "lucide-react";
 
 export default function ChatBot() {
     const [open, setOpen] = useState(false);
@@ -14,7 +15,7 @@ export default function ChatBot() {
         {
             role: "assistant",
             content:
-                "Hello 👋 I am your Trading Assistant AI. I can help you understand Forex and Crypto markets, explain trading concepts, analyze strategies, and answer questions about risk management, technical analysis, and market tools."
+                "Hello  I am your Trading Assistant AI. I can help you understand Forex and Crypto markets, explain trading concepts, analyze strategies, and answer questions about risk management, technical analysis, and market tools."
         }
     ]);
     const messagesEndRef = useRef(null);
@@ -96,7 +97,7 @@ export default function ChatBot() {
         setMessage("");
         setLoading(true);
         try {
-            const response = await fetch("http://localhost:5000/chat", {
+            const response = await fetch("https://trading-platform-backend-peyh.onrender.com/chat", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -161,7 +162,7 @@ export default function ChatBot() {
                 <div className="chat-window">
                     <div className="chat-header">
                         <h4>Trading Assistant AI</h4>
-                        <button className="chat-close" onClick={() => setOpen(false)}><X size={18} /></button>
+                        <button className="chat-close" onClick={() => setOpen(false)}><CloseIcon size={18} /></button>
                     </div>
                     <div className="chat-body">
                         {messages.map((msg, index) => (

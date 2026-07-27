@@ -7,6 +7,7 @@ import { startForexLive, stopForexLive, getForexPrice } from "../services/forexL
 import "../styles/forex-trading.css";
 import ForexTradingChart from "../components/ForexTradingChart";
 import { onAuthStateChanged } from "firebase/auth";
+import { IoClose } from "react-icons/io5";
 
 export default function ForexTrading() {
 
@@ -452,7 +453,7 @@ export default function ForexTrading() {
     ];
 
     async function fetchPrice(pair) {
-        const response = await fetch(`http://localhost:5000/api/twelvedata/price?symbol=${pair}`);
+        const response = await fetch(`https://trading-platform-backend-peyh.onrender.com/api/twelvedata/price?symbol=${pair}`);
         const data = await response.json();
         setPriceCache(prev => ({
             ...prev,
@@ -462,7 +463,7 @@ export default function ForexTrading() {
 
     async function fetchPairStats() {
         try {
-            const response = await fetch(`http://localhost:5000/api/twelvedata/history?symbol=${selectedPair.api}`);
+            const response = await fetch(`https://trading-platform-backend-peyh.onrender.com/api/twelvedata/history?symbol=${selectedPair.api}`);
             const data = await response.json();
             if (!data.values)
                 return;
@@ -924,7 +925,7 @@ export default function ForexTrading() {
     async function analyzeTrade() {
         try {
             setAnalysisLoading(true);
-            const res = await fetch("http://localhost:5000/analyze-trade", {
+            const res = await fetch("https://trading-platform-backend-peyh.onrender.com/analyze-trade", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -1086,7 +1087,7 @@ export default function ForexTrading() {
                                 {orderType !== "Sell Limit" && (
                                     <button className="buy-btn1" onClick={() => {
                                         if (isWeekend()) {
-                                            alert("❌ Trading is closed during weekend!");
+                                            alert(" Trading is closed during weekend!");
                                             return;
                                         }
                                         placeBuyTrade();
@@ -1097,7 +1098,7 @@ export default function ForexTrading() {
                                 {orderType !== "Buy Limit" && (
                                     <button className="sell-btn1" onClick={() => {
                                         if (isWeekend()) {
-                                            alert("❌ Trading is closed during weekend!");
+                                            alert(" Trading is closed during weekend!");
                                             return;
                                         }
                                         placeSellTrade();
@@ -1406,11 +1407,11 @@ export default function ForexTrading() {
                         <div className="drawer" onClick={(e) => e.stopPropagation()}>
                             <div className="drawer-header">
                                 <h2>AI Trade Review</h2>
-                                <button className="close-btn" onClick={() => setIsDrawerOpen(false)}>✕</button>
+                                <button className="close-btn" onClick={() => setIsDrawerOpen(false)}><IoClose /></button>
                             </div>
                             <div className="drawer-content">
                                 {analysisLoading && (
-                                    <p>🤖 Analyzing trade...</p>
+                                    <p> Analyzing trade...</p>
                                 )}
                                 {!analysisLoading && !tradeAnalysis && (
                                     <p>

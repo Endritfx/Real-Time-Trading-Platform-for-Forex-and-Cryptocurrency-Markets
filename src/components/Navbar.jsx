@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { signOut } from "firebase/auth";
 import { auth } from "../services/firebase";
 import Chatbot from "../forex/components/Chatbot";
+import { FiMenu } from "react-icons/fi";
 
 export default function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -29,7 +30,7 @@ export default function Navbar() {
                 <span>Trading App</span>
             </Link>
             {/* MOBILE BUTTON */}
-            <button className="menu-btn" onClick={() => setMenuOpen(!menuOpen)}>☰</button>
+            <button className="menu-btn" onClick={() => setMenuOpen(!menuOpen)}><FiMenu /></button>
             {/* LINKS */}
             <div className={`nav-links ${menuOpen ? "show" : ""}`}>
                 <Link to="/dashboard" className={isActive("/dashboard") ? "active" : ""} onClick={() => setMenuOpen(false)} >

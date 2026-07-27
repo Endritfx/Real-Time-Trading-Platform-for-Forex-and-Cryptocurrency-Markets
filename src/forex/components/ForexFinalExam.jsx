@@ -117,13 +117,13 @@ export default function ForexFinalExam({ onPass, onExit }) {
             {
                 score === null && (
                     <button className="exit-exam-btn" onClick={() => { if (onExit) onExit(); }}>
-                        ← Back to Academy
+                        Back to Academy
                     </button>
                 )
             }
 
             <div className="exam-timer">
-                ⏰ {minutes}:
+                {minutes}:
                 {
                     seconds.toString().padStart(2, "0")
                 }
@@ -179,13 +179,13 @@ export default function ForexFinalExam({ onPass, onExit }) {
                             score >= passingScore ?
                                 <>
                                     <h1>
-                                        ✅ PASSED
+                                        PASSED
                                     </h1>
                                     <button className="certificate-btn3" onClick={() => setShowCertificate(true)}>
-                                        🎓 View Certificate
+                                        View Certificate
                                     </button>
                                     <button className="review-btn3" onClick={() => setShowReview(!showReview)}>
-                                        📖
+
                                         {
                                             showReview ? "Hide Review" : "Review Answers"
                                         }
@@ -206,12 +206,12 @@ export default function ForexFinalExam({ onPass, onExit }) {
                                                                 {
                                                                     correct ?
                                                                         <p className="correct-answer">
-                                                                            ✅ Correct
+                                                                            Correct
                                                                         </p>
                                                                         :
                                                                         <>
                                                                             <p className="wrong-answer">
-                                                                                ❌ Wrong
+                                                                                Wrong
                                                                             </p>
                                                                             <p>Your Answer:{" "}{answers[index] || "No Answer"}</p>
                                                                             <p>Correct Answer:{" "}{question.answer}</p>
@@ -229,10 +229,10 @@ export default function ForexFinalExam({ onPass, onExit }) {
                                 :
                                 <>
                                     <h1>
-                                        ❌ FAILED
+                                        FAILED
                                     </h1>
                                     <button className="continue-btn4" onClick={() => { if (onExit) onExit(); }}>
-                                        ⬅ Back to Academy
+                                        Back to Academy
                                     </button>
                                 </>
                         }
@@ -265,7 +265,7 @@ export default function ForexFinalExam({ onPass, onExit }) {
                             </div>
                         </div>
                         <button className="download-certificate-btn" onClick={downloadCertificate} >
-                            📥 Download Certificate
+                            Download Certificate
                         </button>
                     </div>
                 )

@@ -4,6 +4,7 @@ import { auth, db } from "../services/firebase";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import "../styles/leaderboard.css";
+import { FaCrown, FaMedal, FaTrophy, FaChartLine, FaWallet, FaPercentage, FaUser } from "react-icons/fa";
 
 export default function Leaderboard() {
     const [users, setUsers] = useState([]);
@@ -16,8 +17,7 @@ export default function Leaderboard() {
                 const d = doc.data();
                 data.push({
                     id: doc.id, username: d.username || "Trader",
-                    balance:
-                        Number(d.balance || 0),
+                    balance: Number(d.balance || 0),
                     totalProfit: Number(d.totalProfit || 0),
                     wins: Number(d.wins || 0),
                     totalTrades: Number(d.totalTrades || 0)
@@ -60,7 +60,7 @@ export default function Leaderboard() {
             <Navbar />
             <div className="leaderboard-container" >
                 <div className="top-box">
-                    <h1>🏆 Top Traders </h1>
+                    <h1> <FaTrophy className="title-icon" />Top Traders </h1>
                     <select value={sortType} onChange={(e) => setSortType(e.target.value)}>
                         <option value="profit">Profit</option>
                         <option value="balance"> Balance </option>
@@ -86,10 +86,16 @@ export default function Leaderboard() {
                     {
                         sortedUsers.map(
                             (user, index) => {
-                                let medal = "#" + (index + 1);
-                                if (index === 0) medal = "👑";
-                                if (index === 1) medal = "🥈";
-                                if (index === 2) medal = "🥉";
+                                let medal = <span className="rank-number">#{index + 1}</span>;
+
+                                if (index === 0)
+                                    medal = <FaCrown className="gold-medal" />;
+
+                                if (index === 1)
+                                    medal = <FaMedal className="silver-medal" />;
+
+                                if (index === 2)
+                                    medal = <FaMedal className="bronze-medal" />;
 
                                 const winRate = user.totalTrades > 0 ? (
                                     (

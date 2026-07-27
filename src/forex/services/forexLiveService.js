@@ -7,7 +7,7 @@ export function startForexLive(symbol) {
         return;
     }
 
-    const socket = new WebSocket("ws://localhost:5000");
+    const socket = new WebSocket("wss://trading-platform-backend-peyh.onrender.com");
 
     socket.onopen = () => {
         console.log("Connected to Backend");
