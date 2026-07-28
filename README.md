@@ -29,7 +29,6 @@ The primary objective of this platform is to provide an educational environment 
 - AI Market Insight
 - Cryptocurrency Wallet
 - Portfolio Allocation
-- Leaderboard
 - Financial News
 - Economic Calendar
 - Learning Modules
@@ -125,18 +124,6 @@ Features include:
 - Quantity Owned
 - Largest Holding
 - Portfolio Allocation (%)
-
----
-
-###  Leaderboard
-
-Compare trading performance with other registered users.
-
-Statistics include:
-
-- Account Balance
-- Profit
-- Win Rate
 
 ---
 
@@ -423,9 +410,6 @@ npm run dev
 
 ## Crypto Wallet
 ![CryptoWallet](images/crypto-wallet.png)
-
-## Leaderboard
-![Leaderboard](images/leaderboard.png)
 
 ## Crypto News
 ![CryptoNews](images/crypto-news.png)

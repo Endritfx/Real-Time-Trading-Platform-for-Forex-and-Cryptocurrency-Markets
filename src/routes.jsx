@@ -5,7 +5,6 @@ import ScrollToTop from "./components/ScrollToTop";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import Wallet from "./pages/Wallet";
-import Leaderboard from "./pages/Leaderboard";
 import News from "./pages/News";
 import Learning from "./pages/Learning";
 
@@ -24,7 +23,6 @@ export default function RoutesComponent() {
                 <Route path="/" element={<Login />} />
                 <Route path="/dashboard" element={<Dashboard />} />
                 <Route path="/wallet" element={<Wallet />} />
-                <Route path="/leaderboard" element={<Leaderboard />} />
                 <Route path="/news" element={<News />} />
                 <Route path="/learning" element={<Learning />} />
 
