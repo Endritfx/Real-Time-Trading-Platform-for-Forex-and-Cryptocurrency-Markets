@@ -10,7 +10,6 @@ export async function getMarketStats(symbol) {
         };
 
     } catch (err) {
-        console.log(err);
         return null;
     }
 }

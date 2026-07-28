@@ -18,7 +18,6 @@ export default function Footer() {
                     <h3>Pages</h3>
                     <Link to="/dashboard">Dashboard</Link>
                     <Link to="/wallet">Wallet</Link>
-                    <Link to="/leaderboard">Leaderboard</Link>
                     <Link to="/news">News</Link>
                     <Link to="/learning">Learning</Link>
                 </div>

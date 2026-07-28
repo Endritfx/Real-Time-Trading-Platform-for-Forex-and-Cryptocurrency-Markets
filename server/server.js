@@ -16,7 +16,6 @@ app.use(express.json());
 const wss = new WebSocketServer({ server });
 
 wss.on("connection", (ws) => {
-    console.log("Frontend connected.");
     ws.on("message", (message) => {
         try {
             const data = JSON.parse(message.toString());
@@ -28,7 +27,6 @@ wss.on("connection", (ws) => {
         }
     });
     ws.on("close", () => {
-        console.log("Frontend disconnected.");
     });
 });
 

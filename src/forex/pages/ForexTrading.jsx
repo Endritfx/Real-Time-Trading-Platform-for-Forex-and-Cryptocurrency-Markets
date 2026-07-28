@@ -75,7 +75,6 @@ export default function ForexTrading() {
         pendingOrders.forEach(order => {
             set.add(order.pair);
         });
-        console.log("ACTIVE PAIRS:", [...set]);
         return [...set];
     }, [selectedPair.api, positions, pendingOrders]);
 
@@ -144,7 +143,6 @@ export default function ForexTrading() {
     }, []);
 
     useEffect(() => {
-        console.log("CURRENT USER:", user);
     }, [user]);
 
     useEffect(() => {
@@ -255,10 +253,7 @@ export default function ForexTrading() {
             return;
         async function loadTradingData() {
             try {
-                console.log("LOADING DATA...");
                 const snap = await getDoc(doc(db, "users", user.uid, "trading", "account"));
-                console.log("SNAP EXISTS:", snap.exists());
-                console.log("SNAP DATA:", snap.data());
                 if (snap.exists()) {
                     const data = snap.data();
                     setPositions(data.positions || []);
@@ -286,13 +281,11 @@ export default function ForexTrading() {
 
         const timer = setTimeout(async () => {
             try {
-                console.log("SAVING DATA...");
                 await setDoc(doc(db, "users", user.uid, "trading", "account"),
                     {
                         accountBalance, positions, pendingOrders, tradeHistory
                     }
                 );
-                console.log("DATA SAVED");
             } catch (error) {
                 console.error("SAVE ERROR:", error);
             }

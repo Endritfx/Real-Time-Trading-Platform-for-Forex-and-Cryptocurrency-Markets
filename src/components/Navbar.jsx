@@ -39,9 +39,6 @@ export default function Navbar() {
                 <Link to="/wallet" className={isActive("/wallet") ? "active" : ""} onClick={() => setMenuOpen(false)}>
                     Wallet
                 </Link>
-                <Link to="/leaderboard" className={isActive("/leaderboard") ? "active" : ""} onClick={() => setMenuOpen(false)}>
-                    Leaderboard
-                </Link>
                 <Link to="/news" className={isActive("/news") ? "active" : ""} onClick={() => setMenuOpen(false)}>
                     News
                 </Link>

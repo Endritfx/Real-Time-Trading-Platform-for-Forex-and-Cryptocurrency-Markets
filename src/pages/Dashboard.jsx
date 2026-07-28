@@ -410,13 +410,11 @@ export default function Dashboard() {
             });
             const data = await res.json();
             if (!res.ok) {
-                console.log("Backend error:", data);
                 setAiInsight("AI failed to load data");
                 return;
             }
             setAiInsight(data.insight);
         } catch (err) {
-            console.log("AI error:", err);
             setAiInsight("AI insight not available right now.");
         } finally {
             setAiLoading(false);

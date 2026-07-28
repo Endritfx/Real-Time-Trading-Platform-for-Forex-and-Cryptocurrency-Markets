@@ -7,9 +7,9 @@ async function createUserIfNotExists(user, usernameInput = null) {
     const userRef = doc(db, "users", user.uid);
     try {
         const snap = await getDoc(userRef);
-        console.log("Firestore OK");
+
         if (!snap.exists()) {
-            console.log("Creating user...");
+
             await setDoc(userRef, {
                 username: usernameInput || user.displayName || user.email.split("@")[0],
                 email: user.email,
@@ -44,7 +44,6 @@ export async function login(email, password) {
 
     const userCred = await signInWithEmailAndPassword(auth, email, password);
 
-    console.log("UID:", userCred.user.uid);
 
     await createUserIfNotExists(userCred.user);
 

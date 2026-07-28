@@ -15,7 +15,6 @@ export function connectToTwelveData(symbol, client) {
     const socket = new WebSocket(`wss://ws.twelvedata.com/v1/quotes/price?apikey=${process.env.TWELVEDATA_API_KEY}`);
 
     socket.on("open", () => {
-        console.log("Connected to TwelveData:", symbol);
         socket.send(
             JSON.stringify({
                 action: "subscribe",
@@ -43,11 +42,9 @@ export function connectToTwelveData(symbol, client) {
         }
     });
     socket.on("close", () => {
-        console.log("TwelveData disconnected:", symbol);
         twelveSockets.delete(symbol);
     });
     socket.on("error", err => {
-        console.error("TwelveData Error:", err);
     });
     twelveSockets.set(symbol, {
         socket,

@@ -10,7 +10,6 @@ export function startForexLive(symbol) {
     const socket = new WebSocket("wss://trading-platform-backend-peyh.onrender.com");
 
     socket.onopen = () => {
-        console.log("Connected to Backend");
         socket.send(
             JSON.stringify({
                 action: "subscribe",
@@ -21,7 +20,6 @@ export function startForexLive(symbol) {
 
     socket.onmessage = (event) => {
         const data = JSON.parse(event.data);
-        console.log("TWELVEDATA RESPONSE:", data);
 
         if (
             data.type === "price" &&
@@ -29,7 +27,6 @@ export function startForexLive(symbol) {
             data.price !== undefined
         ) {
             prices[data.symbol] = Number(data.price);
-            console.log("PRICE UPDATED:", data.symbol, prices[data.symbol]);
         }
     };
 
@@ -38,7 +35,6 @@ export function startForexLive(symbol) {
     };
 
     socket.onclose = () => {
-        console.log("SOCKET CLOSED", symbol);
         delete sockets[symbol];
     };
 
