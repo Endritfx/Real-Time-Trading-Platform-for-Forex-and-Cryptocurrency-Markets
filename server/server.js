@@ -40,7 +40,7 @@ app.post("/chat", async (req, res) => {
                 "Authorization": `Bearer ${process.env.GROQ_API_KEY}`
             },
             body: JSON.stringify({
-                model: "llama-3.1-8b-instant",
+                model: "openai/gpt-oss-20b",
                 messages: messages.map(m => ({
                     role: m.role,
                     content: m.content
@@ -155,7 +155,7 @@ FINAL COMMENT:
                 "Authorization": `Bearer ${process.env.GROQ_API_KEY}`
             },
             body: JSON.stringify({
-                model: "llama-3.1-8b-instant",
+                model: "openai/gpt-oss-20b",
                 messages: [
                     {
                         role: "system",
@@ -222,7 +222,7 @@ Output a short market insight.
                 "Authorization": `Bearer ${process.env.GROQ_API_KEY}`
             },
             body: JSON.stringify({
-                model: "llama-3.1-8b-instant",
+                model: "openai/gpt-oss-20b",
                 messages: [
                     {
                         role: "system",
