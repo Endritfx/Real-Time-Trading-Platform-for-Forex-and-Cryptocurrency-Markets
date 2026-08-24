@@ -484,8 +484,6 @@ Deployment Platform:
 
 **Endrit Demiri**
 
-Bachelor of Computer Science
-
 ---
 
 #  Project Purpose
